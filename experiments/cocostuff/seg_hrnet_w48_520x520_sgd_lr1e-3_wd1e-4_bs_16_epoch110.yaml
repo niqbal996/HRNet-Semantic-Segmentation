@@ -10,14 +10,14 @@ PRINT_FREQ: 10
 
 DATASET:
   DATASET: cocostuff
-  ROOT: '/netscratch/naeem_2_del-2021-03/cocosugar/'
+  ROOT: '/netscratch/naeem/cocosugar/'
   TEST_SET: 'val.lst'
   TRAIN_SET: 'train.lst'
   NUM_CLASSES: 3
 MODEL:
   NAME: seg_hrnet
   NUM_OUTPUTS: 1
-  PRETRAINED: '/netscratch/naeem_2_del-2021-03/hrnet_cs_8090_torch11.pth'
+  PRETRAINED: '/netscratch/naeem/hrnet_cs_8090_torch11.pth'
   EXTRA:
     FINAL_CONV_KERNEL: 1
     STAGE1:
