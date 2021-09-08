@@ -10,14 +10,14 @@ PRINT_FREQ: 10
 
 DATASET:
   DATASET: cocostuff
-  ROOT: 'data/'
-  TEST_SET: 'list/cocostuff/val.lst'
-  TRAIN_SET: 'list/cocostuff/train.lst'
-  NUM_CLASSES: 171
+  ROOT: '/netscratch/naeem_2_del-2021-03/cocosugar/'
+  TEST_SET: 'val.lst'
+  TRAIN_SET: 'train.lst'
+  NUM_CLASSES: 3
 MODEL:
   NAME: seg_hrnet
   NUM_OUTPUTS: 1
-  PRETRAINED: 'pretrained_models/hrnetv2_w48_imagenet_pretrained.pth'
+  PRETRAINED: '/netscratch/naeem_2_del-2021-03/hrnet_cs_8090_torch11.pth'
   EXTRA:
     FINAL_CONV_KERNEL: 1
     STAGE1:
@@ -77,7 +77,7 @@ TRAIN:
   - 520
   - 520
   BASE_SIZE: 520
-  BATCH_SIZE_PER_GPU: 4
+  BATCH_SIZE_PER_GPU: 16
   SHUFFLE: true
   BEGIN_EPOCH: 0
   END_EPOCH: 110
@@ -99,7 +99,7 @@ TEST:
   - 520
   - 520
   BASE_SIZE: 520
-  BATCH_SIZE_PER_GPU: 1
+  BATCH_SIZE_PER_GPU: 16
   NUM_SAMPLES: 200
   FLIP_TEST: false
   MULTI_SCALE: false
